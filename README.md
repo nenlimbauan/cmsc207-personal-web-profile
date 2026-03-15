@@ -2,7 +2,7 @@
 
 This project is a personal web profile website created as part of the CMSC 207 course requirement. The goal of the project is to build a simple single-page website using HTML, CSS, and JavaScript while demonstrating basic web development concepts such as layout design, navigation, styling, and interactivity.
 
-The website introduces basic information about me, the things I enjoy, and fun facts about my cats.
+The website introduces basic information about me, the things I enjoy, and a fun fact about how I became a cat parent, which is shared through a short story and photos of my cats.
 
 ---
 
