@@ -1,0 +1,454 @@
+html{
+scroll-behavior:smooth;
+scroll-padding-top:95px;
+}
+
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Poppins,sans-serif;
+background:#17352f;
+}
+
+img{
+display:block;
+max-width:100%;
+}
+
+.container{
+width:90%;
+max-width:1100px;
+margin:auto;
+}
+
+.site-header{
+background:#17352f;
+color:white;
+text-align:center;
+padding:20px;
+position:sticky;
+top:0;
+z-index:100;
+}
+
+.site-header h1{
+margin:0;
+}
+
+.site-header h1 span{
+font-family:Parisienne,cursive;
+font-size:60px;
+}
+
+.site-nav{
+margin-top:10px;
+}
+
+.site-nav a{
+color:white;
+margin:0 12px;
+text-decoration:none;
+font-weight:500;
+transition:0.3s ease;
+}
+
+.site-nav a.active,
+.site-nav a:hover{
+background:#e8d8c8;
+color:#17352f;
+padding:8px 14px;
+border-radius:20px;
+}
+
+.content-section,
+.site-footer{
+scroll-margin-top:95px;
+}
+
+.content-section{
+background:#f7efe7;
+margin:32px auto;
+padding:35px;
+border-radius:22px;
+width:90%;
+max-width:1100px;
+box-shadow:0 12px 30px rgba(0,0,0,0.18);
+position:relative;
+overflow:hidden;
+}
+
+/* subtle leaf decorations */
+
+.content-section::before{
+content:"🍃";
+position:absolute;
+font-size:120px;
+opacity:0.05;
+top:-10px;
+left:-10px;
+}
+
+.content-section::after{
+content:"🍃";
+position:absolute;
+font-size:120px;
+opacity:0.05;
+bottom:-20px;
+right:-10px;
+transform:rotate(180deg);
+}
+
+.content-section h2{
+margin-top:0;
+margin-bottom:14px;
+color:#17352f;
+}
+
+/* ABOUT SECTION */
+
+.about-container{
+display:flex;
+align-items:center;
+gap:30px;
+}
+
+.about-image{
+flex:0 0 320px;
+}
+
+.about-image img{
+width:320px;
+height:320px;
+object-fit:cover;
+
+border-radius:60% 60% 55% 55%;
+border:10px solid #17352f;
+
+box-shadow:0 15px 30px rgba(0,0,0,0.25);
+
+transform:rotate(-2deg);
+transition:0.3s;
+}
+
+.about-image img:hover{
+transform:rotate(0deg) scale(1.03);
+}
+
+.about-text{
+flex:1;
+}
+
+.about-text p{
+line-height:1.7;
+margin-bottom:16px;
+}
+
+/* HOBBIES */
+
+.hobby-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.hobby-card{
+background:white;
+padding:20px;
+border-radius:18px;
+box-shadow:0 8px 18px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.hobby-card:hover{
+transform:translateY(-6px);
+box-shadow:0 12px 24px rgba(0,0,0,0.15);
+}
+
+/* FUN FACT BUTTON */
+
+.fun-fact-button{
+display:block;
+margin:12px auto 20px;
+padding:10px 18px;
+border:none;
+border-radius:20px;
+background:#17352f;
+color:white;
+font-size:0.95rem;
+cursor:pointer;
+transition:0.3s;
+}
+
+.fun-fact-button:hover{
+background:#2d5a50;
+}
+
+.hidden{
+display:none;
+}
+
+/* GROUP PHOTO */
+
+.group-photo-frame{
+max-width:520px;
+margin:10px auto 6px;
+text-align:center;
+}
+
+.group-photo{
+width:100%;
+height:auto;
+display:block;
+mix-blend-mode:multiply;
+opacity:0.95;
+}
+
+/* STORY */
+
+.cats-story{
+margin:6px 0;
+line-height:1.7;
+}
+
+.subheading{
+margin-top:28px;
+margin-bottom:16px;
+color:#17352f;
+display:flex;
+align-items:center;
+gap:6px;
+}
+
+.tap-hint{
+text-align:center;
+font-size:0.9rem;
+margin-bottom:12px;
+color:#17352f;
+opacity:0.8;
+}
+
+/* CAT GRID */
+
+.cat-grid{
+display:grid;
+grid-template-columns:repeat(4,220px);
+justify-content:center;
+gap:22px;
+margin-top:24px;
+}
+
+.cat-card{
+position:relative;
+width:220px;
+height:220px;
+border-radius:18px;
+overflow:hidden;
+box-shadow:0 8px 18px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.cat-card:hover{
+transform:translateY(-6px);
+box-shadow:0 12px 24px rgba(0,0,0,0.14);
+outline:3px solid #2d5a50;
+outline-offset:-3px;
+}
+
+.cat-card img{
+width:100%;
+height:220px;
+object-fit:cover;
+transition:transform 0.35s;
+}
+
+.cat-card:hover img{
+transform:scale(1.08);
+}
+
+.cat-overlay{
+position:absolute;
+inset:0;
+background:rgba(23,53,47,0.82);
+color:white;
+opacity:0;
+transition:0.3s;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:16px;
+text-align:center;
+}
+
+.cat-card:hover .cat-overlay,
+.cat-card.active .cat-overlay{
+opacity:1;
+}
+
+/* LIST SECTIONS */
+
+.lists-grid{
+display:grid;
+grid-template-columns:repeat(2,minmax(260px,1fr));
+gap:24px;
+margin-top:30px;
+align-items:start;
+}
+
+.cat-list-box{
+background:white;
+padding:20px;
+border-radius:18px;
+box-shadow:0 6px 14px rgba(0,0,0,0.08);
+}
+
+.cat-list{
+list-style:none;
+padding:0;
+margin:0;
+}
+
+.cat-list li{
+padding:8px 0;
+border-bottom:1px solid rgba(23,53,47,0.08);
+}
+
+.cat-list li:last-child{
+border-bottom:none;
+}
+
+.two-column{
+display:grid;
+grid-template-columns:repeat(2,auto);
+column-gap:40px;
+}
+
+/* FOOTER */
+
+.site-footer{
+background:#17352f;
+color:#ffffff;
+text-align:center;
+padding:40px 20px;
+margin-top:40px;
+}
+
+.site-footer h2{
+margin-top:0;
+margin-bottom:16px;
+font-family:"Parisienne",cursive;
+font-size:2.6rem;
+color:white;
+}
+
+.contact-icons{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:30px;
+margin-top:10px;
+}
+
+.contact-icons a{
+display:flex;
+align-items:center;
+justify-content:center;
+width:50px;
+height:50px;
+border-radius:50%;
+background:#2d5a50;
+color:white !important;
+text-decoration:none;
+font-size:22px;
+transition:0.3s;
+}
+
+.contact-icons a:hover{
+background:#e8d8c8;
+color:#17352f !important;
+transform:scale(1.1);
+}
+
+/* TABLET */
+
+@media(max-width:980px){
+
+.cat-grid{
+grid-template-columns:repeat(2,220px);
+}
+
+.lists-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+html{
+scroll-padding-top:100px;
+}
+
+.content-section,
+.site-footer{
+scroll-margin-top:100px;
+}
+
+.site-header h1 span{
+font-size:48px;
+}
+
+.site-nav a{
+display:inline-block;
+margin:6px 8px;
+}
+
+.about-container{
+flex-direction:column;
+align-items:center;
+text-align:left;
+}
+
+.about-image img{
+width:250px;
+height:250px;
+}
+
+.cat-grid{
+grid-template-columns:repeat(2,180px);
+gap:16px;
+}
+
+.cat-card{
+width:180px;
+height:180px;
+}
+
+.cat-card img{
+height:180px;
+}
+
+}
+
+@media(max-width:500px){
+
+.cat-grid{
+grid-template-columns:1fr;
+justify-items:center;
+}
+
+.cat-card{
+width:220px;
+height:220px;
+}
+
+.cat-card img{
+height:220px;
+}
+
+}
